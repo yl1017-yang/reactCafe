@@ -1,15 +1,27 @@
 {
   "files": {
-    "main.css": "/reactCafe/static/css/main.e6c13ad2.css",
-    "main.js": "/reactCafe/static/js/main.b8e5e9eb.js",
+    "main.css": "/reactCafe/static/css/main.4eea7e1f.css",
+    "main.js": "/reactCafe/static/js/main.110b0135.js",
     "static/js/787.c4e7f8f9.chunk.js": "/reactCafe/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/NotoSansKR-Bold.woff": "/reactCafe/static/media/NotoSansKR-Bold.bccfd5fe964d7e12ae44.woff",
+    "static/media/NotoSansKR-Regular.woff": "/reactCafe/static/media/NotoSansKR-Regular.957d49ad23632e4a9349.woff",
+    "static/media/NotoSansKR-DemiLight.woff": "/reactCafe/static/media/NotoSansKR-DemiLight.23dbbed6e0505fc38336.woff",
+    "static/media/NotoSansKR-Medium.woff2": "/reactCafe/static/media/NotoSansKR-Medium.192871a7ecf6f0aacae7.woff2",
+    "static/media/NotoSansKR-Medium.woff": "/reactCafe/static/media/NotoSansKR-Medium.1e60c772194ae54596e8.woff",
+    "static/media/NotoSansKR-Regular.woff2": "/reactCafe/static/media/NotoSansKR-Regular.e95adf0e9aeddac43f42.woff2",
+    "static/media/NotoSansKR-Bold.woff2": "/reactCafe/static/media/NotoSansKR-Bold.a4ecc3f7a43f7d43ce24.woff2",
+    "static/media/NotoSansKR-DemiLight.woff2": "/reactCafe/static/media/NotoSansKR-DemiLight.4b945487c9bfe575be4a.woff2",
+    "static/media/Lato-Regular.woff": "/reactCafe/static/media/Lato-Regular.35ca512c2d31bffe1ea6.woff",
+    "static/media/Lato-Bold.woff": "/reactCafe/static/media/Lato-Bold.fe9270a9eeb238dbf6ba.woff",
+    "static/media/Lato-Regular.woff2": "/reactCafe/static/media/Lato-Regular.4cc984d398e04d4287e1.woff2",
+    "static/media/Lato-Bold.woff2": "/reactCafe/static/media/Lato-Bold.8209b84286e4eaa38b83.woff2",
     "index.html": "/reactCafe/index.html",
-    "main.e6c13ad2.css.map": "/reactCafe/static/css/main.e6c13ad2.css.map",
-    "main.b8e5e9eb.js.map": "/reactCafe/static/js/main.b8e5e9eb.js.map",
+    "main.4eea7e1f.css.map": "/reactCafe/static/css/main.4eea7e1f.css.map",
+    "main.110b0135.js.map": "/reactCafe/static/js/main.110b0135.js.map",
     "787.c4e7f8f9.chunk.js.map": "/reactCafe/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.b8e5e9eb.js"
+    "static/css/main.4eea7e1f.css",
+    "static/js/main.110b0135.js"
   ]
 }
