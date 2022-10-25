@@ -43,11 +43,11 @@ function Header() {
         <Container fluid="xxl">
           <Nav className="flex-wrap">
             <Nav.Link onClick={() => { navigate('/reactCafe/') }}>매출요인</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/reactCafe/Integrate') }}>회원게시판</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/SalesDetail') }}>매출상세조회</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/Product') }}>브랜드/상품관리</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/Menu') }}>메뉴관리</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/MenuPermission') }}>메뉴권한관리</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/reactCafe/Integrate') }}>통합관리</Nav.Link>
             {/* <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           </Nav>

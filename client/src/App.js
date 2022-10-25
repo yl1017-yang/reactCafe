@@ -7,7 +7,9 @@ import RoutesMap from "./RoutesMap"; //일반 라우터 설치
 
 function App() {
   const callApi = async()=>{
-    axios.get("/api").then((res)=>{console.log(res.data.test)});
+    axios.get("/api").then((res)=>{
+      console.log(res.data.test)
+    });
   };
 
   useEffect(()=>{
