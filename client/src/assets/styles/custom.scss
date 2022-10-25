@@ -1,0 +1,236 @@
+@at-root {
+  @font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local('NotoSansKR-DemiLight'), url("../fonts/NotoSansKR-DemiLight.woff2") format('woff2'), url("../fonts/NotoSansKR-DemiLight.woff") format('woff');
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('NotoSansKR-Regular'), url("../fonts/NotoSansKR-Regular.woff2") format('woff2'), url("../fonts/NotoSansKR-Regular.woff") format('woff');
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('NotoSansKR-Medium'), url("../fonts/NotoSansKR-Medium.woff2") format('woff2'), url("../fonts/NotoSansKR-Medium.woff") format('woff');
+  }
+  @font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('NotoSansKR-Bold'), url("../fonts/NotoSansKR-Bold.woff2") format('woff2'), url("../fonts/NotoSansKR-Bold.woff") format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Lato-Regular'), url("../fonts/Lato-Regular.woff2") format('woff2'), url("../fonts/Lato-Regular.woff") format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Lato-Bold'), url("../fonts/Lato-Bold.woff2") format('woff2'), url("../fonts/Lato-Bold.woff") format('woff');
+  }
+}
+
+// _variables.scss 커스텀 ////////////////////////////////////////////////////////////////////////////
+
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// scss-docs-start color-variables
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #4361ee !default;
+$primary-color: #006d77 !default;
+$point-color: #e76f51 !default;
+
+// scss-docs-start theme-color-variables
+$primary:       $primary-color !default;
+$secondary:     $gray-500 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+$point:         $point-color !default;
+
+// Style anchor elements.
+$link-color:                              $primary !default;
+$link-decoration:                         underline !default;
+$link-shade-percentage:                   20% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+
+// Settings for the `<body>` element.
+$body-bg:                   $white !default;
+$body-color:                $gray-700 !default;
+
+// scss-docs-start border-radius-variables
+$border-radius:               0rem !default; //.375rem
+$border-radius-sm:            0rem !default; //.25rem
+$border-radius-lg:            0rem !default; //.5rem
+$border-radius-xl:            1rem !default;
+$border-radius-2xl:           2rem !default;
+$border-radius-pill:          50rem !default;
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Lato', 'NotoSans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+// $font-size-base affects the font size of the body text
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+
+// scss-docs-start input-btn-variables
+$input-btn-focus-color-opacity: .60 !default;
+$input-btn-focus-color:         none;
+
+// scss-docs-start pagination-variables
+$pagination-font-size: $font-size-sm !default;
+$pagination-color: inherit;
+
+////////////////////////////////////////////////////////////////////////////
+
+
+#root {
+
+  /* Header 네비바 */
+  .header-util.navbar {
+    padding: 20px 0;
+    background-color: $gray-200;
+
+    .navbar-brand {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .navbar-nav {
+      font-size: 18px;
+      --bs-nav-link-hover-color: #e76f51;
+
+      .nav-link {
+        font-weight: 500;
+      }
+    }
+
+    .navbar-toggler {
+      border: 0;
+    }
+    .navbar-toggler:focus {
+      
+    }
+
+    .text-state {
+      font-size: 14px;
+      color: $gray-500;
+      margin-right: 15px;
+    }
+  }
+
+  .header-nav.navbar {
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 50px;
+    padding: 10px;
+
+    .nav-link {
+      padding: 5px 15px;
+    }
+  }
+
+  .footer {
+    border-top: 1px solid #ddd;
+    margin-top: 80px;
+    padding: 40px 10px;
+
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+
+  /* 타이틀 */
+  .title-h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+    color: $primary-color;
+  }
+
+  .title-h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: $gray-800;
+  }
+
+  /* 테이블 */
+  .tbl-type1 {
+    border-top: 2px solid #444;
+
+    thead, tbody, tfoot, tr, td, th {
+      vertical-align: middle;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    thead th {
+      font-size: $font-size-sm;
+      background-color: #f9f9f9;
+      padding: 0.8rem 0;
+    }
+  }
+
+  @media ( max-width : 992px) {
+    table {
+      width: 100%;
+      // min-width: 768px;
+      min-width: 992px;
+    }
+  }
+
+  /* 설명 카드 */
+  .card-con {
+    span {
+      color: $point-color;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+  }
+
+  /* 설명 카드 - 검색 */
+  .card-con-search {
+    background-color: $gray-200;
+    border: 0;
+  }
+
+
+}
+
+@import "~bootstrap/scss/bootstrap";

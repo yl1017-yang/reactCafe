@@ -1,0 +1,94 @@
+html, body {
+    font-family: 'Lato', 'NotoSans', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family:'NotoSans';
+    font-style:normal;
+    font-weight:300;
+    font-display: swap;
+    src:local('NotoSansKR-DemiLight'),
+    url(../fonts/NotoSansKR-DemiLight.woff2) format('woff2'),
+    url(../fonts/NotoSansKR-DemiLight.woff) format('woff');
+}
+@font-face {
+    font-family:'NotoSans';
+    font-style:normal;
+    font-weight:400;
+    font-display: swap;
+    src:local('NotoSansKR-Regular'),
+    url(../fonts/NotoSansKR-Regular.woff2) format('woff2'),
+    url(../fonts/NotoSansKR-Regular.woff) format('woff');
+}
+@font-face {
+    font-family:'NotoSans';
+    font-style:normal;
+    font-weight:500;
+    font-display: swap;
+    src:local('NotoSansKR-Medium'),
+    url(../fonts/NotoSansKR-Medium.woff2) format('woff2'),
+    url(../fonts/NotoSansKR-Medium.woff) format('woff');
+}
+@font-face {
+    font-family:'NotoSans';
+    font-style:normal;
+    font-weight:700;
+    font-display: swap;
+    src:local('NotoSansKR-Bold'),
+    url(../fonts/NotoSansKR-Bold.woff2) format('woff2'),
+    url(../fonts/NotoSansKR-Bold.woff) format('woff');
+}
+@font-face {
+    font-family:'Lato';
+    font-style:normal;
+    font-weight:400;
+    font-display: swap;
+    src:local('Lato-Regular'),
+    url(../fonts/Lato-Regular.woff2) format('woff2'),
+    url(../fonts/Lato-Regular.woff) format('woff');
+}
+@font-face {
+    font-family:'Lato';
+    font-style:normal;
+    font-weight:700;
+    font-display: swap;
+    src:local('Lato-Bold'),
+    url(../fonts/Lato-Bold.woff2) format('woff2'),
+    url(../fonts/Lato-Bold.woff) format('woff');
+}
+
+:root {
+    --bs-blue: #1282a2 !important;
+    --bs-primary: #1282a2 !important;
+    --bs-secondary: #DA667B  !important;
+    --bs-font-sans-serif: 'Lato', 'NotoSans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+/* Header 네비바 */
+#root .navbar{padding:20px 0;background-color:#fff;border-bottom:1px solid #ddd;margin-bottom:50px;}
+#root .navbar .navbar-brand{font-size:32px;font-weight:700;}
+#root .navbar .navbar-nav{font-size:18px;}
+
+#root .footer{background:#f4f4f4;margin-top:80px;padding:30px;}
+#root .footer p{line-height:1;font-size:14px;}
+
+/* 타이틀 */
+#root .title-h2{font-size:32px;margin:0 0 10px}
+#root .title-h3{font-size:24px;margin:30px 0 10px;}
+
+/* 버튼 */
+#root .btn-outline-primary{border:1px solid #1282a2;color:#1282a2;}
+#root .btn-primary{background-color:#1282a2;border:1px solid #1282a2;}
+
+/* 테이블 */
+#root .tbl-type1{border-top:1px solid #444;}
+#root .tbl-type1 thead th{background-color:#f9f9f9;padding:1.2% 0;}
+
+/* 페이지 */
+#root .page-link{color:#777;}
+#root .page-link.active, #root .active > .page-link{background-color:#1282a2;border:1px solid #1282a2;}
