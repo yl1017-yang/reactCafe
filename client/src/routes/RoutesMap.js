@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import Main from "../pages/Main";
 import BoardList from "../pages/BoardList";
+import BoardDetail from "../pages/BoardDetail";
+import BoardWrite from "../pages/BoardWrite";
 import SalesDetail from "../pages/SalesDetail";
 import Product from "../pages/Product";
 import Menu from "../pages/Menu";
@@ -24,8 +26,10 @@ function RoutesMap() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/reactCafe/" element={<Layout />}>
-					<Route path="/reactCafe/" element={<Main />} />
+					<Route exact path="/reactCafe/" element={<Main />} />
           <Route path="BoardList" element={<BoardList />} />
+          <Route path="BoardDetail" element={<BoardDetail />} />
+          <Route path="BoardWrite" element={<BoardWrite />} />
 					<Route path="SalesDetail" element={<SalesDetail />} />
 					<Route path="Product" element={<Product />} />
 					<Route path="Menu" element={<Menu />} />

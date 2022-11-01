@@ -41,7 +41,7 @@ function Header() {
       <Navbar bg="primary" variant="dark" className="header-nav" sticky="top">
         <Container fluid="xxl">
           <Nav className="flex-wrap">
-            <Nav.Link onClick={() => { navigate('/reactCafe/') }}>매출요인</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/reactCafe/') }}>메인</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/BoardList') }}>게시판 리스트</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/SalesDetail') }}>매출상세조회</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/Product') }}>브랜드/상품관리</Nav.Link>
