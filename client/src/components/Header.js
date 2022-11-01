@@ -1,6 +1,6 @@
 // 리액트 링크 : https://react-router.vlpt.us/1/03.html
 // css 수정 : https://think0wise.tistory.com/m/24
-// 아이콘: https://react-icons.github.io/react-icons/icons?name=io5
+// 아이콘: https://react-icons.github.io/react-icons/icons?name=sl
 // https://velog.io/@sangbin2/NavLink-%EC%82%AC%EC%9A%A9%EB%B2%95
 // https://blog.naver.com/PostView.naver?blogId=azanghs&logNo=222827522522
 // https://samtao.tistory.com/32
@@ -30,8 +30,7 @@ function Header() {
             </Nav>
 
             <div className="text-state">
-              id1234 [ 농부들의 카페장터 ] [ 1911275 ] <br />
-              [ s ] [ 100.100.123.123 ] 로그인 상태입니다
+              <span>하지원</span>님 로그인 상태입니다
             </div>
             <Button variant="primary" size="sm">로그아웃</Button>
             
@@ -43,7 +42,7 @@ function Header() {
         <Container fluid="xxl">
           <Nav className="flex-wrap">
             <Nav.Link onClick={() => { navigate('/reactCafe/') }}>매출요인</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/reactCafe/Integrate') }}>회원게시판</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/reactCafe/BoardList') }}>게시판 리스트</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/SalesDetail') }}>매출상세조회</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/Product') }}>브랜드/상품관리</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/Menu') }}>메뉴관리</Nav.Link>
