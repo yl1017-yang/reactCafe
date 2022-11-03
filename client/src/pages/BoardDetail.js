@@ -16,10 +16,22 @@ const BoardDetail = (props) => {
   // const [isWriter, setIsWriter] = useState(false);
   
   useEffect(() => {
-    axios.post('/api/board/BoardDetail', { id })
-      .then(res => setPost(res.data.result))
-      .catch(err => console.log(err));
-  }, []);
+    const fetchPost = async () => {
+      const res = await axios.post('/api/board/', { id });
+
+       if (res.data && res.data.length == 0) {
+          alert('조회된 결과가 없습니다');
+       } else {
+          setPost(res.data.result);
+          // setFileList(res.data.result.fileList);
+          // setIsWriter(res.data.result.isWriter)
+          await axios.post('/api/board/', { id });
+       }
+    }
+
+    fetchPost();
+
+ }, []);
 
   // useEffect(() => {
   //   const fetchPost = async () => {

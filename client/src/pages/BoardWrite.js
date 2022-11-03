@@ -19,38 +19,40 @@ const BoardWrite = () => {
   const [type, setType] = useState('공지사항');
   const uploadReferenece = React.createRef();
 
+  async function onClickSearch() {
+    if (title.trim() == '') {
+      alert('제목을 입력해주세요'); return;
+    }
+
+    if (desc.trim() == '') {
+      alert('내용을 입력해주세요'); return;
+    }
+
+    // await uploadReferenece.current.upload().then(function (result) {
+    //   const files = result;
+    //   ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
+    //     if (res.data && res.data.ok === 1) {
+    //       alert('저장 완료');
+    //       setId(res.data.insertedId);
+    //       var linkToClick = document.getElementById('notice_Detail_Link');
+    //       linkToClick.click();
+    //     } else {
+    //       alert('공지사항을 저장하는 도중 오류가 발생하였습니다.')
+    //     }
+    //   }, null, true);
+    //   }).catch(function (err) {
+    // });
+
+
+  }
+
   // async function onClickSearch() {
-  //   if (title.trim() == '') {
-  //     alert('제목을 입력해주세요'); return;
-  //   }
-
-  //   if (desc.trim() == '') {
-  //     alert('내용을 입력해주세요'); return;
-  //   }
-
   //   await uploadReferenece.current.upload().then(function (result) {
-  //     const files = result;
-  //     ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
-  //       if (res.data && res.data.ok === 1) {
-  //         alert('저장 완료');
-  //         setId(res.data.insertedId);
-  //         var linkToClick = document.getElementById('notice_Detail_Link');
-  //         linkToClick.click();
-  //       } else {
-  //         alert('공지사항을 저장하는 도중 오류가 발생하였습니다.')
-  //       }
-  //     }, null, true);
-  //     }).catch(function (err) {
+  //       const files = result;
+  //       alert('저장 완료');
+  //   }).catch(function (err) {
   //   });
   // }
-
-  async function onClickSearch() {
-    await uploadReferenece.current.upload().then(function (result) {
-        const files = result;
-        alert('저장 완료');
-    }).catch(function (err) {
-    });
-  }
 
   function onEditorChange(value) {
     setDesc(value)

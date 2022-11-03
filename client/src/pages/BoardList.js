@@ -19,7 +19,7 @@ const BoardList = (props) => {
 
   //데이터 호출  https://jsonplaceholder.typicode.com/users
   useEffect(() => {
-    axios.get('/api/board')
+    axios.post('/api/board')
       .then(res => setPosts(res.data))
       .catch(err => console.log(err));
   }, []);
