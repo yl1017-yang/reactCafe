@@ -7,6 +7,7 @@ import moment from "moment";
 import 'react-quill/dist/quill.snow.css';
 
 //https://bigexecution.tistory.com/8
+// async, await 사용 https://intrepidgeeks.com/tutorial/use-axios-to-send-get-and-post-requests-from-react-js
 
 const BoardDetail = (props) => {
 
@@ -15,41 +16,27 @@ const BoardDetail = (props) => {
   // const [fileList, setFileList] = useState([]);
   // const [isWriter, setIsWriter] = useState(false);
   
+
   useEffect(() => {
     const fetchPost = async () => {
-      const res = await axios.post('/api/board/', { id });
+      try {
+        const res = await axios.post('/api/board', { id });
 
-       if (res.data && res.data.length == 0) {
-          alert('조회된 결과가 없습니다');
-       } else {
-          setPost(res.data.result);
-          // setFileList(res.data.result.fileList);
-          // setIsWriter(res.data.result.isWriter)
-          await axios.post('/api/board/', { id });
-       }
+        if (res.data && res.data.length == 0) {
+            alert('조회된 결과가 없습니다');
+        } else {
+            setPost(res.data.result);
+            // setFileList(res.data.result.fileList);
+            // setIsWriter(res.data.result.isWriter)
+            axios.post('/api/board/', { id });
+        }
+      } catch (err) {
+        console.log("something went wrong!", err);
+      }
     }
 
     fetchPost();
-
  }, []);
-
-  // useEffect(() => {
-  //   const fetchPost = async () => {
-  //      let res = axios.post('/api/board/BoardDetail', { id });
-
-  //      if (res.data && res.data.length == 0) {
-  //         alert('조회된 결과가 없습니다');
-  //      } else {
-  //         setPost(res.data.result);
-  //         setFileList(res.data.result.fileList);
-  //         setIsWriter(res.data.result.isWriter)
-  //         axios.post('/api/board/BoardDetail', { id });
-  //      }
-  //   }
-
-  //   fetchPost();
-  // }, []);
-
 
   return (
     <>

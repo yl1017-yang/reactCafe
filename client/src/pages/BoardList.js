@@ -18,11 +18,25 @@ const BoardList = (props) => {
   const [postsPerPage] = useState(7);
 
   //데이터 호출  https://jsonplaceholder.typicode.com/users
+  // useEffect(() => {
+  //   axios.post('/api/board')
+  //     .then(res => setPosts(res.data))
+  //     .catch(err => console.log(err));
+  // }, []);
+
   useEffect(() => {
-    axios.post('/api/board')
-      .then(res => setPosts(res.data))
-      .catch(err => console.log(err));
-  }, []);
+    const fetchPosts = async () => {
+      try {
+        const res = await axios.post('https://yl1017-yang.github.io/reactCafe/board',);
+        console.log(res.status);
+        console.log(res.data);
+        setPosts(res.data);
+      } catch (err) {
+        console.log('something went wrong :( ', err);
+      }
+    }
+    fetchPosts();
+ }, []);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

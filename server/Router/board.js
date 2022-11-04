@@ -1,117 +1,31 @@
+// https://mygameprogamming.tistory.com/83
+// https://velog.io/@dami/Express-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-JSON-%ED%98%95%ED%83%9C%EB%A1%9C-%EC%9D%91%EB%8B%B5%ED%95%98%EA%B8%B0
+// https://cotak.tistory.com/87
+// post json https://codingcoding.tistory.com/497
+
 const express = require('express');
 const router = express.Router();
 
-// response - json 데이터 보내기
-router.get('/', function(req, res, next) {
-  res.send([
-    {
-      "id": 1,
-      "type": "공지사항",
-      "userName": "이상화",
-      "title": "공지사항 제목입니다.-11",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 2,
-      "type": "공지사항",
-      "userName": "관리자",
-      "title": "공지사항 제목입니다.-22",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 3,
-      "type": "-",
-      "userName": "관리자",
-      "title": "공지사항 제목입니다.-33",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 4,
-      "type": "-",
-      "userName": "영미",
-      "title": "공지사항 제목입니다.-44",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 5,
-      "type": "공지사항",
-      "userName": "이상화",
-      "title": "공지사항 제목입니다.-55",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 6,
-      "type": "공지사항",
-      "userName": "홍길동",
-      "title": "공지사항 제목입니다.-66",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 7,
-      "type": "공지사항",
-      "userName": "성선화",
-      "title": "공지사항 제목입니다.",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 8,
-      "type": "공지사항",
-      "userName": "이상화",
-      "title": "공지사항 제목입니다.",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 9,
-      "type": "공지사항",
-      "userName": "인쇄",
-      "title": "공지사항 제목입니다.",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
-    },
-    {
-      "id": 10,
-      "type": "-",
-      "userName": "인강",
-      "title": "공지사항 제목입니다.",
-      "desc": "<p>내용입니다.</p>",
-      "readCount": 0,
-      "fileList": [],
-      "date": "2022-12-23 17:54:05.025"
+const fs = require('fs');
+const boardData = JSON.parse(fs.readFileSync('./router/boardData.json', 'utf8'));
+// const boardData = require('./boardData.json');
+
+router.get('/', (req, res, next) => {
+  // res.json(boardData);
+
+  res.sendFile(__dirname + '/boardData.json', (err) => {
+    if (err) {
+      res.sendStatus(400);
+    } else {
+      console.log('sanding completed');
     }
-  ]);
+  })
 });
 
-// request - json 데이터 받기
-// router.post('/', function(req, res, next) {
-//   console.log(req.body);
-//   const result = req.body;
-//   res.send(result);
-// });
+router.post('/', (req, res, next) => {
+  const paramId = req.body || req.query;
+  boardData.push(paramId);
+  return res.json(boardData);
+});
 
 module.exports = router;
