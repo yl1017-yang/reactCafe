@@ -1,10 +1,12 @@
 const express = require('express');
+// const cors = require('cors');
 const app = express();
 // const bodyParser = require('body-parser');  // 최신버전에서는 express가 body-parser를 포함
 
 //패스 지정용 모듈
 const path = require('path');
 
+// app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // 추가적인 배열을 받아올 수 있음
 
