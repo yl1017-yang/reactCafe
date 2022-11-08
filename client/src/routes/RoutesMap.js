@@ -23,13 +23,13 @@ const NotFound = () => {
 
 function RoutesMap() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<Routes>
 				<Route path="/reactCafe/" element={<Layout />}>
 					<Route exact path="/reactCafe/" element={<Main />} />
-          <Route path="BoardList" element={<BoardList />} />
-          <Route path="BoardDetail" element={<BoardDetail />} />
-          <Route path="BoardWrite" element={<BoardWrite />} />
+          <Route exact path="BoardList" element={<BoardList />} />
+          <Route exact path="BoardDetail/:id" element={<BoardDetail />} />
+          <Route exact path="BoardWrite" element={<BoardWrite />} />
 					<Route path="SalesDetail" element={<SalesDetail />} />
 					<Route path="Product" element={<Product />} />
 					<Route path="Menu" element={<Menu />} />

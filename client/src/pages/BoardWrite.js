@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import Editor from '../components/Editor';
+import Editor from '../components/Editor';
 import UploadFiles from '../commons/UploadFiles';
 // import LFSelect from '../commons/LFSelect';
 
@@ -29,19 +29,19 @@ const BoardWrite = () => {
     // }
 
     await uploadReferenece.current.upload().then(function (result) {
-        const files = result;
+      const files = result;
 
-        // axios.post('/api/board/', { title: title, desc: desc, type: type, files: files }, (res) => {
-          axios.post('/api/board/', { title: title, files: files, }, (res) => {
-            if (res.data && res.data.ok === 1) {
-                alert('저장 완료');
-                setId(res.data.insertedId);
-                var linkToClick = document.getElementById('notice_Detail_Link');
-                linkToClick.click();
-            } else {
-                alert('공지사항을 저장하는 도중 오류가 발생하였습니다.')
-            }
-        }, null, true); 
+      axios.post('/api/board/', { title: title, desc: desc, type: type, files: files }, (res) => {
+          if (res.data && res.data.ok === 1) {
+              alert('저장 완료');
+              setId(res.data.insertedId);
+              console.log(res.data);
+              var linkToClick = document.getElementById('notice_Detail_Link');
+              linkToClick.click();
+          } else {
+              alert('공지사항을 저장하는 도중 오류가 발생하였습니다.')
+          }
+      }, null, true); 
 
     }).catch(function (err) {
     });
@@ -68,12 +68,12 @@ const BoardWrite = () => {
         </div>
 
         <UploadFiles ref={uploadReferenece} />
-        {/* <Editor value={desc} onChange={onEditorChange} /> */}
+        <Editor value={desc} onChange={onEditorChange} />
 
         <div className="text-center pd12">
           <button className="lf-button primary" onClick={onClickSearch}>완료</button>
         </div>
-        <Link id="notice_Detail_Link" to={{ pathname: '/BoardDetail', state: { _id: id } }}></Link>
+        <Link id="notice_Detail_Link" to={{ pathname: '/BoardDetail', state: { id: id } }}></Link>
       </div>
 
     </>

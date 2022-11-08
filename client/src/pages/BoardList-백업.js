@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 import axios from "axios";
 import moment from "moment";
 import Pagination from '../components/Pagination';
-const SERVER_URL = '/api/board'
+import { SlDoc } from "react-icons/sl";
 
 // https://bigexecution.tistory.com/4?category=847175
 // https://goddino.tistory.com/154
@@ -12,8 +12,8 @@ const SERVER_URL = '/api/board'
 // https://grahams.tistory.com/280 최종
 
 
-const BoardList = ({ id }) => {
-  
+const BoardList = (props) => {
+
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(7);
@@ -25,20 +25,19 @@ const BoardList = ({ id }) => {
   //     .catch(err => console.log(err));
   // }, []);
 
-  const fetchPosts = async () => {
-    try {
-      const res = await axios.post(SERVER_URL);
-      console.log(res.status);
-      console.log(res.data);
-      setPosts(res.data);
-    } catch (err) {
-      console.log('something went wrong :( ', err);
-    }
-  }
   useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await axios.post('/api/board',);
+        console.log(res.status);
+        console.log(res.data);
+        setPosts(res.data);
+      } catch (err) {
+        console.log('something went wrong :( ', err);
+      }
+    }
     fetchPosts();
   }, []);
-  
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -74,19 +73,25 @@ const BoardList = ({ id }) => {
               <th>작성자</th>
               <th>작성일시</th>
               <th>조회수</th>
+              <th>첨부</th>
             </tr>
           </thead>
           <tbody>
 
-            {currentPosts.map((post) => (
+            {currentPosts.map(post => (
               <tr key={post.id}>
                 <td>{post.id}</td>
                 <td>{post.type}</td>
-                {/* <td><Link to={{ pathname: '/reactCafe/BoardDetail/', state: { id: post.id } }}>{post.title}</Link></td> */}
-                <td><Link to={`/reactCafe/BoardDetail/${post.id}`}>{post.title}</Link></td>
+                <td><Link to={{ pathname: '/reactCafe/BoardDetail/', state: { id: post.id } }}>{post.title}</Link></td>
                 <td>{post.userName}</td>
                 <td>{moment(post.date).format('YYYY-MM-DD')}</td>
                 <td>{post.readCount}</td>
+                <td>
+                  {post.fileList.length > 0 &&
+                    // <img src="/images/board_attach.gif" />
+                    <SlDoc size="18" />
+                  }
+                </td>
               </tr>
             ))}
 
@@ -94,7 +99,8 @@ const BoardList = ({ id }) => {
         </Table>
       </div>
 
-      <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} currentPage={currentPage} paginate={paginate}></Pagination>      
+      <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} currentPage={currentPage} paginate={paginate}></Pagination>
+
     </>
   )
 }
