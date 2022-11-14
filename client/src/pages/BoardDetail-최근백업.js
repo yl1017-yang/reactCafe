@@ -10,7 +10,6 @@ import moment from "moment";
 const BoardDetail = (props) => {
 
   // const { id } = useParams();
-  const id = props.match.params.id;
   const [post, setPost] = useState([]);
 
   const fetchPost = async (id) => {
@@ -18,14 +17,15 @@ const BoardDetail = (props) => {
       const res = await axios.post(`/api/board/${id}`);
       console.log(res.status);
       console.log(res.data);
-      setPost(res.data.result);
+      setPost(res.data);
     } catch (err) {
       console.log("something went wrong!", err);
     }
   }  
   useEffect(() => {
-    fetchPost();
-  }, [id]);
+    fetchPost(props.match.params.id);
+    // fetchPost();
+  }, [props.match.params.id]);
 
   return (
     <>
@@ -72,7 +72,7 @@ const BoardDetail = (props) => {
 
       <div className="d-md-flex justify-content-md-end">
         {/* <Link to="/reactCafe/BoardList" className="btn btn-secondary">목록</Link> */}
-        {/* <button className="btn btn-secondary" onClick={() => history.push('/reactCafe/BoardList')}>목록</button> */}
+        <button className="btn btn-secondary" onClick={() => history.push('/reactCafe/BoardList')}>목록</button>
       </div>
 
 

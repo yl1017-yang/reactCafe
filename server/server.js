@@ -27,12 +27,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 404 Error Handling
 app.use(function(req, res, next) {
-  res.status(404).send('Sorry cant find that!');
+  res.status(404).send('404 Sorry cant find that!');
 });
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send('500 Something broke!');
 });
 
 const port = process.env.PORT || 5000; //React가 3000번 포트를 사용하기 때문에 node 서버가 사용할 포트넘버는 다른 넘버로 지정해준다.

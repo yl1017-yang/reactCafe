@@ -12,6 +12,7 @@ const boardData = JSON.parse(fs.readFileSync('./router/boardData.json', 'utf8'))
 // const boardData = require('./boardData.json');
 
 router.get('/', (req, res, next) => {
+  // res.setHeader('Content-Type', 'text/html');
   res.json(boardData);
 
   // res.sendFile(__dirname + '/boardData.json', (err) => {
@@ -23,11 +24,14 @@ router.get('/', (req, res, next) => {
   // })
 });
 
-router.post('/', (req, res, next) => {
-  const paramId = req.body || req.query;
-  boardData.push(paramId);
-  res.json(boardData);
-  return res.send('success')
+router.post('/', (req, res) => {
+  // const paramId = req.body || req.query;
+  // boardData.push(paramId);
+  if (req.body) {
+    res.setHeader('Content-Type', 'application/json');
+    return res.json(boardData);
+  }
+  return res.send('성공');
 });
 
 module.exports = router;

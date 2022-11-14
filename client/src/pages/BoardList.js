@@ -12,7 +12,7 @@ const SERVER_URL = '/api/board'
 // https://grahams.tistory.com/280 최종
 
 
-const BoardList = ({ id }) => {
+const BoardList = (props) => {
   
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
