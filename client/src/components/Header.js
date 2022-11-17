@@ -16,7 +16,7 @@ function Header() {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="header-util">
       <Container fluid="xxl">
-          <Navbar.Brand onClick={() => { navigate('/reactCafe/') }}>Café si</Navbar.Brand>
+          <Navbar.Brand onClick={() => { navigate('/reactCafe/') }}>Cafe</Navbar.Brand>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

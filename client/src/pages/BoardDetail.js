@@ -1,4 +1,4 @@
-import { useState, useEffect, useParams, history } from "react";
+import { useState, useEffect, useParams, useHistory } from "react";
 // import { Link } from 'react-router-dom';
 import { Table } from "react-bootstrap";
 import axios from "axios";
@@ -6,21 +6,25 @@ import moment from "moment";
 
 //https://bigexecution.tistory.com/8
 // async, await 사용 https://intrepidgeeks.com/tutorial/use-axios-to-send-get-and-post-requests-from-react-js
+// https://jsonplaceholder.typicode.com/posts
 
 const BoardDetail = (props) => {
 
-  // const { id } = useParams();
-  const id = props.match.params.id;
+  const history = useHistory();
+  const { id } = useParams();
+
+  // const id = props.match.params.id;
   const [post, setPost] = useState([]);
 
   const fetchPost = async (id) => {
     try {
-      const res = await axios.post(`/api/board/${id}`);
+      const res = await axios.get(`/api/board/${id}`);
       console.log(res.status);
       console.log(res.data);
       setPost(res.data.result);
     } catch (err) {
       console.log("something went wrong!", err);
+      console.log("실패");
     }
   }  
   useEffect(() => {
@@ -72,7 +76,7 @@ const BoardDetail = (props) => {
 
       <div className="d-md-flex justify-content-md-end">
         {/* <Link to="/reactCafe/BoardList" className="btn btn-secondary">목록</Link> */}
-        {/* <button className="btn btn-secondary" onClick={() => history.push('/reactCafe/BoardList')}>목록</button> */}
+        <button className="btn btn-secondary" onClick={() => history.push('/reactCafe/BoardList') }>목록</button>
       </div>
 
 

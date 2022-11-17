@@ -35,8 +35,9 @@ app.use(function(err, req, res, next) {
   res.status(500).send('500 Something broke!');
 });
 
+const hostname = 'localhost';
 const port = process.env.PORT || 5000; //React가 3000번 포트를 사용하기 때문에 node 서버가 사용할 포트넘버는 다른 넘버로 지정해준다.
-app.listen(port, () => {
+app.listen(port, hostname, () => {
   console.log(`Listening on port ${port}`)
 });
 

@@ -27,12 +27,14 @@ const BoardList = (props) => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.post(SERVER_URL);
+      const res = await axios.get(SERVER_URL);
       console.log(res.status);
       console.log(res.data);
+      console.log("성공");
       setPosts(res.data);
     } catch (err) {
       console.log('something went wrong :( ', err);
+      console.log("실패");
     }
   }
   useEffect(() => {
