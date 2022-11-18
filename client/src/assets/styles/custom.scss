@@ -230,6 +230,34 @@ $pagination-color: inherit;
     border: 0;
   }
 
+   /* 공지사항 - 상세 */
+   .board-detail {
+      h3 {
+        display: block;
+        border-top: 2px solid #222;
+        border-bottom: 1px solid #eee;
+        padding: 24px 10px;
+        font-size: 40px;
+      }
+      .board-desc {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        
+        span {
+          display: inline-block;
+          padding-right: 30px;
+          font-size: 15px;
+          color: #777;
+        }
+      }
+      .board-con {
+        min-height: 250px;
+        padding: 40px 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        font-size: 22px;
+      }
+   }
 
 }
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { Table } from "react-bootstrap";
 import axios from "axios";
@@ -10,13 +10,14 @@ const SERVER_URL = '/api/board'
 // https://goddino.tistory.com/154
 // https://wonyoung2257.tistory.com/6
 // https://grahams.tistory.com/280 최종
+// 상세보기 https://duckgugong.tistory.com/244?category=1050595
 
 
 const BoardList = (props) => {
   
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(7);
+  const [postsPerPage] = useState(8);
 
   //데이터 호출  https://jsonplaceholder.typicode.com/users
   // useEffect(() => {
@@ -34,7 +35,6 @@ const BoardList = (props) => {
       setPosts(res.data);
     } catch (err) {
       console.log('something went wrong :( ', err);
-      console.log("실패");
     }
   }
   useEffect(() => {
@@ -86,8 +86,8 @@ const BoardList = (props) => {
                 <td>{post.type}</td>
                 {/* <td><Link to={{ pathname: '/reactCafe/BoardDetail/', state: { id: post.id } }}>{post.title}</Link></td> */}
                 <td><Link to={`/reactCafe/BoardDetail/${post.id}`}>{post.title}</Link></td>
-                <td>{post.userName}</td>
-                <td>{moment(post.date).format('YYYY-MM-DD')}</td>
+                <td>{post.username}</td>
+                <td>{moment(post.date).add(9,"hour").format('YYYY-MM-DD')}</td>
                 <td>{post.readCount}</td>
               </tr>
             ))}

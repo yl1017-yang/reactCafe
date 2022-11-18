@@ -8,15 +8,15 @@ import UploadFiles from '../commons/UploadFiles';
 
 const BoardWrite = () => {
 
-  const tabs = [
-    { value: '공지사항', text: '공지사항' },
-    { value: '업데이트', text: '업데이트' }
-  ]
+  // const tabs = [
+  //   { value: '공지사항', text: '공지사항' },
+  //   { value: '업데이트', text: '업데이트' }
+  // ]
 
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
-  const [type, setType] = useState('공지사항');
+  // const [type, setType] = useState('공지사항');
   const uploadReferenece = React.createRef();
 
 
@@ -31,7 +31,7 @@ const BoardWrite = () => {
     await uploadReferenece.current.upload().then(function (result) {
       const files = result;
 
-      axios.post('/api/board/', { title: title, desc: desc, type: type, files: files }, (res) => {
+      axios.post('/api/board/', { title: title, desc: desc, files: files }, (res) => {
           if (res.data && res.data.ok === 1) {
               alert('저장 완료');
               setId(res.data.insertedId);

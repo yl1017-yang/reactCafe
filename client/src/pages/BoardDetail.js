@@ -1,85 +1,58 @@
-import { useState, useEffect, useParams, useHistory } from "react";
-// import { Link } from 'react-router-dom';
-import { Table } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 
 //https://bigexecution.tistory.com/8
 // async, await 사용 https://intrepidgeeks.com/tutorial/use-axios-to-send-get-and-post-requests-from-react-js
 // https://jsonplaceholder.typicode.com/posts
+// router 6X https://reactrouter.com/en/v6.3.0/upgrading/v5
 
 const BoardDetail = (props) => {
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams();
+  console.log("params : ", id);
 
-  // const id = props.match.params.id;
   const [post, setPost] = useState([]);
 
-  const fetchPost = async (id) => {
+  const fetchPost = async () => {
     try {
       const res = await axios.get(`/api/board/${id}`);
       console.log(res.status);
       console.log(res.data);
-      setPost(res.data.result);
+      setPost(res.data);
     } catch (err) {
       console.log("something went wrong!", err);
-      console.log("실패");
     }
   }  
   useEffect(() => {
     fetchPost();
-  }, [id]);
+  }, []);
+
 
   return (
     <>
       <h2 className="title-h2">공지사항 내용</h2>
 
-      <div className="tbl-type1 table-responsive mt-3">
-        <Table>
-          <thead>
-            <tr>
-              <th>번호</th>
-              <td>{post.id}</td>
-            </tr>
-            <tr>
-              <th>구분</th>
-              <td>{post.type}</td>
-            </tr>
-            <tr>
-              <th>제목</th>
-              <td>{post.title}</td>
-            </tr>
-            <tr>
-              <th>작성자</th>
-              <td>{post.userName}</td>
-            </tr>
-            <tr>
-              <th>작성일시</th>
-              <td>{moment(post.date).format('YYYY-MM-DD')}</td>
-            </tr>
-            <tr>
-              <th>조회수</th>
-              <td>{post.readCount}</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                1111111111111111
-                내용
-              </td>
-            </tr>
-          </tbody>
-        </Table>
+      <div className="board-detail">
+        <h3>{post.title}</h3>
+        <div className="board-desc">
+          <span>번호 : {post.id}</span>
+          <span>구분 : {post.type}</span>
+          <span>작성자 : {post.username}</span>
+          <span>조회수 : {post.readCount}</span>
+          <span>작성일시 : {moment(post.date).format('YYYY-MM-DD')}</span>
+        </div>      
+        <div className="board-con">
+          {post.desc}
+        </div>
       </div>
+      
 
       <div className="d-md-flex justify-content-md-end">
-        {/* <Link to="/reactCafe/BoardList" className="btn btn-secondary">목록</Link> */}
-        <button className="btn btn-secondary" onClick={() => history.push('/reactCafe/BoardList') }>목록</button>
+        <button className="btn btn-secondary" onClick={() => navigate(-1) }>목록</button>
       </div>
-
-
 
     </>
   )
