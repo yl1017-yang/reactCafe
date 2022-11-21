@@ -23,6 +23,7 @@ const NotFound = () => {
 
 function RoutesMap(props) {
 	return (
+    // PUBLIC_URL은 package.json의 homepage URL값으로 설정
     <BrowserRouter basename={process.env.PUBLIC_URL}>
     {/* <BrowserRouter> */}
       <Routes>
@@ -36,7 +37,7 @@ function RoutesMap(props) {
 					{/* <Route path="/Menu" element={<Menu />} /> */}
 					{/* <Route path="/MenuPermission" element={<MenuPermission />} /> */}
 				</Route>
-				<Route path="/reactCafe/no-layout" element={<NoLayout />} />
+				<Route path="/no-layout" element={<NoLayout />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>

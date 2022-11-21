@@ -18,7 +18,7 @@ const BoardDetail = (props) => {
 
   const fetchPost = useCallback(async () => {
     try {
-      const res = await axios.get(`/api/board/${id}`);
+      const res = await axios.get(`/board/${id}`);
       console.log(res.status);
       console.log(res.data);
       setPost(res.data);

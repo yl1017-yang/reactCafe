@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 import axios from "axios";
 import moment from "moment";
 import Pagination from '../components/Pagination';
-const SERVER_URL = '/api/board'
+const SERVER_URL = '/board'
 
 // https://bigexecution.tistory.com/4?category=847175
 // https://goddino.tistory.com/154
