@@ -4,10 +4,10 @@ import Main from "../pages/Main";
 import BoardList from "../pages/BoardList";
 import BoardDetail from "../pages/BoardDetail";
 import BoardWrite from "../pages/BoardWrite";
-import SalesDetail from "../pages/SalesDetail";
 import Product from "../pages/Product";
-import Menu from "../pages/Menu";
-import MenuPermission from "../pages/MenuPermission";
+// import SalesDetail from "../pages/SalesDetail";
+// import Menu from "../pages/Menu";
+// import MenuPermission from "../pages/MenuPermission";
 import NoLayout from "../pages/NoLayout";
 
 //라우터 링크 내용 https://velog.io/@hwang-eunji/React-Route-%EA%B8%B0%EB%B3%B8%EC%84%A4%EC%A0%95
@@ -24,16 +24,17 @@ const NotFound = () => {
 function RoutesMap(props) {
 	return (
     <BrowserRouter>
-			<Routes basename={process.env.PUBLIC_URL}>
+			{/* <Routes basename={process.env.PUBLIC_URL}> */}
+      <Routes>
 				<Route exact path="/reactCafe/" element={<Layout />}>
 					<Route exact path="/reactCafe/" element={<Main />} />
           <Route path="BoardList" element={<BoardList />} />
           <Route path="BoardDetail/:id" element={<BoardDetail />} />
-          <Route path="BoardWrite" element={<BoardWrite />} />
-					<Route path="SalesDetail" element={<SalesDetail />} />
+          <Route path="BoardWrite" element={<BoardWrite />} />					
 					<Route path="Product" element={<Product />} />
-					<Route path="Menu" element={<Menu />} />
-					<Route path="MenuPermission" element={<MenuPermission />} />
+          {/* <Route path="/SalesDetail" element={<SalesDetail />} /> */}
+					{/* <Route path="/Menu" element={<Menu />} /> */}
+					{/* <Route path="/MenuPermission" element={<MenuPermission />} /> */}
 				</Route>
 				<Route path="/reactCafe/no-layout" element={<NoLayout />} />
 				<Route path="/*" element={<NotFound />} />

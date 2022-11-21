@@ -22,8 +22,14 @@ app.use('/users', usersRouter);
 app.use('/board', boardRouter);
 
 //요청파일 루팅
-app.use(express.static(path.join(__dirname, 'public')));
-// 요청파일 루팅 설명 https://codingcoding.tistory.com/560
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get('/*', (req, res, next) => {
+  res.sendFile('index.html', {
+    root: path.join(__dirname, 'build')
+  })
+});
 
 // 404 Error Handling
 app.use(function(req, res, next) {
@@ -43,3 +49,5 @@ app.listen(port, hostname, () => {
 
 // https://millo-l.github.io/Nodejs-express-router-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/
 // body-parser 설치: https://fierycoding.tistory.com/20
+
+//cafe24호스팅시 https://velog.io/@peration/React-server-client-%EA%B0%9C%EB%B0%9C

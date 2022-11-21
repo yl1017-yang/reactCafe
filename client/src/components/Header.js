@@ -32,7 +32,7 @@ function Header() {
             <div className="text-state">
               <span>하지원</span>님 로그인 상태입니다
             </div>
-            <Button variant="primary" size="sm">로그아웃</Button>
+            <Button variant="primary" size="sm">로그인</Button>
             
           </Navbar.Collapse>
         </Container>
@@ -43,10 +43,10 @@ function Header() {
           <Nav className="flex-wrap">
             <Nav.Link onClick={() => { navigate('/reactCafe/') }}>메인</Nav.Link>
             <Nav.Link onClick={() => { navigate('/reactCafe/BoardList') }}>게시판 리스트</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/reactCafe/SalesDetail') }}>매출상세조회</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/reactCafe/Product') }}>브랜드/상품관리</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/reactCafe/Menu') }}>메뉴관리</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/reactCafe/MenuPermission') }}>메뉴권한관리</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/reactCafe/Product') }}>상품 리스트</Nav.Link>
+            {/* <Nav.Link onClick={() => { navigate('/reactCafe/SalesDetail') }}>매출상세조회</Nav.Link> */}
+            {/* <Nav.Link onClick={() => { navigate('/reactCafe/Menu') }}>메뉴관리</Nav.Link> */}
+            {/* <Nav.Link onClick={() => { navigate('/reactCafe/MenuPermission') }}>메뉴권한관리</Nav.Link> */}
             {/* <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           </Nav>
