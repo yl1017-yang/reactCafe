@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
@@ -16,7 +16,7 @@ const BoardDetail = (props) => {
 
   const [post, setPost] = useState([]);
 
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const res = await axios.get(`/api/board/${id}`);
       console.log(res.status);
@@ -25,10 +25,10 @@ const BoardDetail = (props) => {
     } catch (err) {
       console.log("something went wrong!", err);
     }
-  }  
+  }, [id]);
   useEffect(() => {
     fetchPost();
-  }, []);
+  }, [fetchPost]);
 
 
   return (
