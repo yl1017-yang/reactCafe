@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/reactCafe/static/css/main.1c6db064.css",
-    "main.js": "/reactCafe/static/js/main.e3619478.js",
+    "main.js": "/reactCafe/static/js/main.680bc81a.js",
     "static/js/787.c4e7f8f9.chunk.js": "/reactCafe/static/js/787.c4e7f8f9.chunk.js",
     "static/media/NotoSansKR-Bold.woff": "/reactCafe/static/media/NotoSansKR-Bold.bccfd5fe964d7e12ae44.woff",
     "static/media/NotoSansKR-Regular.woff": "/reactCafe/static/media/NotoSansKR-Regular.957d49ad23632e4a9349.woff",
@@ -17,11 +17,11 @@
     "static/media/Lato-Bold.woff2": "/reactCafe/static/media/Lato-Bold.8209b84286e4eaa38b83.woff2",
     "index.html": "/reactCafe/index.html",
     "main.1c6db064.css.map": "/reactCafe/static/css/main.1c6db064.css.map",
-    "main.e3619478.js.map": "/reactCafe/static/js/main.e3619478.js.map",
+    "main.680bc81a.js.map": "/reactCafe/static/js/main.680bc81a.js.map",
     "787.c4e7f8f9.chunk.js.map": "/reactCafe/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c6db064.css",
-    "static/js/main.e3619478.js"
+    "static/js/main.680bc81a.js"
   ]
 }
