@@ -22,14 +22,14 @@ app.use('/users', usersRouter);
 app.use('/board', boardRouter);
 
 //요청파일 루팅
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get('/*', (req, res, next) => {
-  res.sendFile('index.html', {
-    root: path.join(__dirname, 'build')
-  })
-});
+// app.get('/*', (req, res, next) => {
+//   res.sendFile('index.html', {
+//     root: path.join(__dirname, 'build')
+//   })
+// });
 
 // 404 Error Handling
 app.use(function(req, res, next) {

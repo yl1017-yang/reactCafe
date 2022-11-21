@@ -16,7 +16,7 @@ function Header() {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="header-util">
       <Container fluid="xxl">
-          <Navbar.Brand onClick={() => { navigate('/reactCafe/') }}>Cafe</Navbar.Brand>
+          <Navbar.Brand onClick={() => { navigate('/') }}>YANG CAFE</Navbar.Brand>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -44,9 +44,9 @@ function Header() {
             <Nav.Link onClick={() => { navigate('/') }}>메인</Nav.Link>
             <Nav.Link onClick={() => { navigate('BoardList') }}>게시판 리스트</Nav.Link>
             <Nav.Link onClick={() => { navigate('Product') }}>상품 리스트</Nav.Link>
-            {/* <Nav.Link onClick={() => { navigate('/reactCafe/SalesDetail') }}>매출상세조회</Nav.Link> */}
-            {/* <Nav.Link onClick={() => { navigate('/reactCafe/Menu') }}>메뉴관리</Nav.Link> */}
-            {/* <Nav.Link onClick={() => { navigate('/reactCafe/MenuPermission') }}>메뉴권한관리</Nav.Link> */}
+            {/* <Nav.Link onClick={() => { navigate('SalesDetail') }}>매출상세조회</Nav.Link> */}
+            {/* <Nav.Link onClick={() => { navigate('Menu') }}>메뉴관리</Nav.Link> */}
+            {/* <Nav.Link onClick={() => { navigate('MenuPermission') }}>메뉴권한관리</Nav.Link> */}
             {/* <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           </Nav>
