@@ -56,7 +56,7 @@ const BoardWrite = () => {
       <h2 className="title-h2">글쓰기</h2>
 
       <div className="d-md-flex justify-content-md-end">
-        <Link to="/reactCafe/BoardList" className="btn btn-secondary">목록</Link>
+        <Link to="/BoardList" className="btn btn-secondary">목록</Link>
       </div>
 
       <div style={{ padding: "12px" }}>

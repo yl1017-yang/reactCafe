@@ -54,7 +54,7 @@ const BoardList = (props) => {
 
       <div className="d-md-flex justify-content-md-end">
         {/* <a href="/reactCafe/BoardWrite"><button className="lf-button primary float-right">글쓰기</button></a> */}
-        <Link to="/reactCafe/BoardWrite" className="btn btn-secondary">글쓰기</Link>
+        <Link to="/BoardWrite" className="btn btn-secondary">글쓰기</Link>
       </div>
 
       <div className="tbl-type1 table-responsive mt-3">
@@ -85,7 +85,7 @@ const BoardList = (props) => {
                 <td>{post.id}</td>
                 <td>{post.type}</td>
                 {/* <td><Link to={{ pathname: '/reactCafe/BoardDetail/', state: { id: post.id } }}>{post.title}</Link></td> */}
-                <td><Link to={`/reactCafe/BoardDetail/${post.id}`}>{post.title}</Link></td>
+                <td><Link to={`/BoardDetail/${post.id}`}>{post.title}</Link></td>
                 <td>{post.username}</td>
                 <td>{moment(post.date).add(9,"hour").format('YYYY-MM-DD')}</td>
                 <td>{post.readCount}</td>

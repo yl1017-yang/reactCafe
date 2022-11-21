@@ -7,7 +7,7 @@ function Main() {
     <>
       <Row>
         <Col><h2 className="title-h2">메인</h2></Col>
-        <Col className="col-auto"><Link className="btn btn-outline-primary" role="button" to="/reactTest/SalesDetail">매출상세조회</Link></Col>
+        <Col className="col-auto"><Link className="btn btn-outline-primary" role="button" to="BoardList">게시판</Link></Col>
       </Row>
 
       <div>
